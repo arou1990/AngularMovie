@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
 import { BestMoviesComponent } from './best-movies/best-movies.component';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 
 
@@ -25,7 +26,8 @@ import { BestMoviesComponent } from './best-movies/best-movies.component';
     ProfilePageComponent,
     HeaderComponent,
     ReviewDialogComponent,
-    BestMoviesComponent
+    BestMoviesComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,

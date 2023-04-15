@@ -1,0 +1,22 @@
+.headericon{
+    float: right;
+ }
+ .example-spacer {
+  flex: 1 1 auto;
+}
+ .title {
+    color: #111;
+    font-family: 'Rock Salt', serif;
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa
+  }
+  .image1 {
+    position: absolute;
+    height: 5%;
+    top: 64px;
+    left: 465px;
+  }

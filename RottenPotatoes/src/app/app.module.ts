@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
+import { BestMoviesComponent } from './best-movies/best-movies.component';
 
 
 
@@ -23,7 +24,8 @@ import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
     MainPageComponent,
     ProfilePageComponent,
     HeaderComponent,
-    ReviewDialogComponent
+    ReviewDialogComponent,
+    BestMoviesComponent
   ],
   imports: [
     BrowserModule,

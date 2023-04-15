@@ -1,9 +1,6 @@
 <app-header></app-header>
 <div class="movieGrid">
-    <app-best-movies></app-best-movies>
-    <app-best-movies></app-best-movies>
-    <app-best-movies></app-best-movies>
-    <app-best-movies></app-best-movies>
-    <app-best-movies></app-best-movies>
-    <app-best-movies></app-best-movies>
+    <span *ngFor="let m of bestMovies">
+    <app-best-movies [movie]="m"></app-best-movies>
+    </span>
 </div>

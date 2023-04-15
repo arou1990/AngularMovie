@@ -1,22 +1,36 @@
-.headericon{
-    float: right;
- }
- .example-spacer {
+.headerToolbar{
+  background-color: #2f3640;
+  color: white;
+}
+.headericon {
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.example-spacer {
   flex: 1 1 auto;
 }
- .title {
-    color: #111;
-    font-family: 'Rock Salt', serif;
-    font-size: 45px;
-    font-weight: bold;
-    letter-spacing: -1px;
-    line-height: 1;
-    text-align: center;
-    text-shadow: 4px 4px 4px #aaa
-  }
-  .image1 {
-    position: absolute;
-    height: 5%;
-    top: 64px;
-    left: 465px;
-  }
+
+.title {
+  margin: 5px;
+  color: white;
+  font-family: 'Rock Salt', serif;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 4px 4px 4px black
+}
+
+.titleImage {
+  height: 50px;
+  width: 50px;
+  top: 64px;
+  left: 465px;
+}
+
+.headertoolbar{
+  background-color:#353b48;
+}

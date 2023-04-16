@@ -15,6 +15,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
 import { BestMoviesComponent } from './best-movies/best-movies.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -34,7 +37,10 @@ import { MovieSearchComponent } from './movie-search/movie-search.component';
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    ReactiveFormsModule
 ],
   providers: [],
   bootstrap: [AppComponent]

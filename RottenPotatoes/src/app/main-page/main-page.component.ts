@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IBestMovies } from '../interfaces/IBestMovies';
+import { ISearchedMovie } from '../interfaces/ISearchedMovie';
 
 @Component({
   selector: 'app-main-page',
@@ -45,5 +46,20 @@ export class MainPageComponent {
       imageSrc: "https://picsum.photos/200/300"
     }
   ]
-
+    searchedMovie: ISearchedMovie[] = [
+    {    
+      poster: "https://picsum.photos/200/300",
+      movieInfo: "Movie Info",
+      userReview: "User Review",
+    },
+    {    
+      poster: "https://picsum.photos/200/300",
+      movieInfo: "Movie Info",
+      userReview: "User Review",
+    },    {    
+      poster: "https://picsum.photos/200/300",
+      movieInfo: "Movie Info",
+      userReview: "User Review",
+    }
+  ]
 }

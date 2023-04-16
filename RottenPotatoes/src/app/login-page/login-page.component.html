@@ -33,18 +33,18 @@
 
       <h1>Rotten Potatoes</h1><br>
 
-      <div class="form">
+      <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="title">Login</div>
         <div class="input-container ic1">
-          <input id="Username" class="input" type="text" placeholder=" " />
+          <input id="username" class="input" formControlName="username" type="text" placeholder=" " />
           <div class="cut"></div>
           <label for="Username" class="placeholder">Username</label>
         </div>
         <div class="input-container ic2">
-          <input id="Password" class="input" type="text" placeholder=" " />
+          <input id="password" class="input" type="password" formControlName="password" placeholder=" " />
           <div class="cut"></div>
           <label for="Password" class="placeholder">Password</label>
         </div>
         <button type="text" class="submit">submit</button>
-      </div>
+      </form>
     </div>

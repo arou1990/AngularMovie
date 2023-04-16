@@ -1,1 +1,17 @@
-<p>movie-search works!</p>
+<div class="searchedMovieContainer">
+  <form>
+    <mat-form-field class="wideSearch">
+      <input class="wideSearch" type="search" matInput placeholder="Search">
+    </mat-form-field>
+  </form>
+  <div class="movieGrid">
+    <div class="searchedMovie">
+      <img [src]="searchedMovie.poster" class="moviePoster" alt="">
+
+    </div>
+    <div class="movieInfo">{{searchedMovie.movieInfo}}</div>
+    <div class="userReviews">{{searchedMovie.userReview}}
+      <button class="reviewButton" mat-raised-button color="primary">Add Review</button>
+    </div>
+  </div>
+</div>

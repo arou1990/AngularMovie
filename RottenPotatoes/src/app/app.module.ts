@@ -11,13 +11,14 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ReviewDialogComponent } from './review-dialog/review-dialog.component';
 import { BestMoviesComponent } from './best-movies/best-movies.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 
 
@@ -40,7 +41,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatIconModule,
     MatFormFieldModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
 ],
   providers: [],
   bootstrap: [AppComponent]

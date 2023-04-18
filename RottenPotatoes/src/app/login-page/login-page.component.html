@@ -1,50 +1,48 @@
-    <div class="projectWrapper">
-      <div id="projectorContainer">
-        <div class="projectorLight">
-          <!---
-    .cover background must be the same as the page background.
+<div class="projectWrapper">
+  <div id="projectorContainer">
+    <div class="projectorLight">
+      <!---
+.cover background must be the same as the page background.
 --->
-          <div class="cover"></div>
-          <div class="cover"></div>
-        </div>
-
-        <div class="projectorBody">
-          <div class="lensHold"></div>
-          <div class="lens"></div>
-          <img class="image1" src="assets/images/Rotten_Potato.png" />
-        </div>
-        <div class="filmDisk" id="film1">
-          <div class="fdBack">
-            <div class="fdFilm"></div>
-            <div class="fdBar"></div>
-            <div class="fdBar2"></div>
-            <div class="fdCover"></div>
-          </div>
-        </div>
-        <div class="filmDisk" id="film2">
-          <div class="fdBack">
-            <div class="fdFilm"></div>
-            <div class="fdBar"></div>
-            <div class="fdBar2"></div>
-            <div class="fdCover"></div>
-          </div>
-        </div>
-      </div><br>
-
-      <h1>Rotten Potatoes</h1><br>
-
-      <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="title">Login</div>
-        <div class="input-container ic1">
-          <input id="username" class="input" formControlName="username" type="text" placeholder=" " />
-          <div class="cut"></div>
-          <label for="Username" class="placeholder">Username</label>
-        </div>
-        <div class="input-container ic2">
-          <input id="password" class="input" type="password" formControlName="password" placeholder=" " />
-          <div class="cut"></div>
-          <label for="Password" class="placeholder">Password</label>
-        </div>
-        <button type="text" class="submit" (click)="loginSnackBar()">submit</button>
-      </form>
+      <div class="cover"></div>
+      <div class="cover"></div>
     </div>
+
+    <div class="projectorBody">
+      <div class="lensHold"></div>
+      <div class="lens"></div>
+      <img class="image1" src="assets/images/Rotten_Potato.png" />
+    </div>
+    <div class="filmDisk" id="film1">
+      <div class="fdBack">
+        <div class="fdFilm"></div>
+        <div class="fdBar"></div>
+        <div class="fdBar2"></div>
+        <div class="fdCover"></div>
+      </div>
+    </div>
+    <div class="filmDisk" id="film2">
+      <div class="fdBack">
+        <div class="fdFilm"></div>
+        <div class="fdBar"></div>
+        <div class="fdBar2"></div>
+        <div class="fdCover"></div>
+      </div>
+    </div>
+  </div><br>
+  <h1>Rotten Potatoes</h1><br>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="title">Login</div>
+    <div class="input-container ic1">
+      <input id="username" class="input" formControlName="username" type="text" placeholder=" " />
+      <div class="cut"></div>
+      <label for="Username" class="placeholder">Username</label>
+    </div>
+    <div class="input-container ic2">
+      <input id="password" class="input" type="password" formControlName="password" placeholder=" " />
+      <div class="cut"></div>
+      <label for="Password" class="placeholder">Password</label>
+    </div>
+    <button type="text" class="submit">submit</button>
+  </form>
+</div>

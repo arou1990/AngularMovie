@@ -10,40 +10,40 @@ import { ISearchedMovie } from '../interfaces/ISearchedMovie';
 export class MainPageComponent {
   bestMovies: IBestMovies[] = [
     {
-      movieTitle: "Movie Title Test0",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "The Dark Knight ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/darkKnight.jpg"
     },
     {
-      movieTitle: "Movie Title Test1",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "The Shawshank Redemption ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/shawshank.jpg"
     },
     {
-      movieTitle: "Movie Title Test2",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "Caddyshack ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/caddyshack.jpg"
     },
     {
-      movieTitle: "Movie Title Test3",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "Interstellar ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/interstellar.jpg"
     },
     {
-      movieTitle: "Movie Title Test4",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "Chef ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/chef.jpg"
     },
     {
-      movieTitle: "Movie Title Test5",
-      imdbScore: "10/10",
-      ourScore: "10/10",
-      imageSrc: "https://picsum.photos/200/300"
+      movieTitle: "Monsters Inc ",
+      imdbScore: "10/10 ",
+      ourScore: "10/10 ",
+      imageSrc: "assets/images/monstersInc.jpg"
     }
   ]
     searchedMovie: ISearchedMovie[] = [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-login-page',
@@ -15,50 +15,32 @@ export class LoginPageComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private loginSnack: MatSnackBar) {}
-
-  ngOnInit(): void{
-    this.form = this.formBuilder.group(
-      {
-        username: ['', Validators.required],
-        password: ['', Validators.required],
-      }
-    )
+  constructor(private formBuilder: FormBuilder, private router: Router, private snackBar: NotificationService ) {}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    })
   }
 
-    onSubmit(): void{
+  onSubmit(): void {
     let username = this.form.value.username;
     let password = this.form.value.password;
-
     let tryLogin = false;
 
-    if(username =="user1" || username == "user2")
-    {
-      if(password == 'test'){
+    if (username == "user1" || username == "user2") {
+      if (password == 'test') {
         localStorage.setItem('loggedInUser', JSON.stringify({
           username: username
         }));
-        this.router.navigateByUrl('/main');
+        this.snackBar.showSnackBar('Login Successful')
+        this.router.navigateByUrl('/main')
         tryLogin = true;
       }
     }
-
-    if(!tryLogin){
+    if (!tryLogin) {
       localStorage.setItem('loggedInUser', '');
+      this.snackBar.showSnackBar('Invalid Login')
     }
-
-
   }
-
-  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'top';
-
-  public loginSnackBar() {
-    this.loginSnack.open('Invalid Login', '', {
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
-
-  }
-
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-review-dialog',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./review-dialog.component.css']
 })
 export class ReviewDialogComponent {
+  constructor(public dialogRef: MatDialogRef<ReviewDialogComponent>) { }
 
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
 }

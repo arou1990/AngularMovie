@@ -1,6 +1,6 @@
 <div class="bestMovie">
     <img [src]="movie.imageSrc" class="moviePoster" alt="">
 <div class="reviewDetails">
-    <span>{{movie.movieTitle}}</span><span>{{movie.imdbScore}} Our Score {{movie.ourScore}}</span>
+    <span>{{movie.movieTitle | shortTitle}}</span><span>{{movie.imdbScore}} Our Score {{movie.ourScore}}</span>
 </div>
 </div>

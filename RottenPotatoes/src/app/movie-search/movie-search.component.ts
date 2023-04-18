@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {ISearchedMovie} from '../interfaces/ISearchedMovie'
+import { ReviewDialogComponent } from '../review-dialog/review-dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-search',
@@ -13,4 +15,16 @@ export class MovieSearchComponent {
     movieInfo: "Movie Info",
     userReview: "User Review",
   }
+  constructor(public dialog: MatDialog) {} 
+
+    public openReviewDialogue(): void{
+
+    let DialogRef = this.dialog.open(ReviewDialogComponent, {
+      height: '500px',
+      width: '300px',
+    });
+
+    }
+
+
 }

@@ -19,6 +19,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { ShortTitlePipe } from './pipes/short-title.pipe';
+
 
 
 
@@ -31,7 +36,8 @@ import { MatSnackBarModule, MatSnackBarHorizontalPosition, MatSnackBarVerticalPo
     HeaderComponent,
     ReviewDialogComponent,
     BestMoviesComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    ShortTitlePipe
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,10 @@ import { MatSnackBarModule, MatSnackBarHorizontalPosition, MatSnackBarVerticalPo
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule
 ],
   providers: [],
   bootstrap: [AppComponent]

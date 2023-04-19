@@ -20,8 +20,9 @@ export class MovieSearchComponent {
     public openReviewDialogue(): void{
 
     let DialogRef = this.dialog.open(ReviewDialogComponent, {
-      height: '500px',
+      height: '350px',
       width: '300px',
+      data: {movieName: 'Searched Movie'}
     });
 
     }

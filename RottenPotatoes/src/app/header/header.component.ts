@@ -27,5 +27,4 @@ export class HeaderComponent implements OnInit {
     let parsedUser : User = JSON.parse(user) as User;
     this.loginName = parsedUser.username;
   }
-  
 }

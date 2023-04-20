@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Private Api File
-/src/app/assets/config/*
+

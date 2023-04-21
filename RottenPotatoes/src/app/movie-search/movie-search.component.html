@@ -8,7 +8,12 @@
     <div class="searchedMovie">
       <img *ngIf="currentMovieInfo.Poster != ''" [src]="currentMovieInfo.Poster" class="moviePoster" alt="">
     </div>
-    <div class="movieInfo"><div *ngIf="currentMovieInfo.Plot != ''">{{currentMovieInfo.Plot}}</div></div>
+    <div class="movieInfo">
+    <div *ngIf="currentMovieInfo.Title != ''">Title: {{currentMovieInfo.Title}}</div>
+    <div *ngIf="currentMovieInfo.Released != ''">Released: {{currentMovieInfo.Released}}</div>
+    <div *ngIf="currentMovieInfo.Runtime != ''">Runtime: {{currentMovieInfo.Runtime}}</div>
+    <div *ngIf="currentMovieInfo.Plot != ''">Plot: {{currentMovieInfo.Plot}}</div>
+    </div>
     <div class="userReviews">
       <button class="reviewButton" mat-raised-button color="primary" (click)="openReviewDialogue()">Add Review</button>
     </div>

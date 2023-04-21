@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { ShortTitlePipe } from './pipes/short-title.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { MovieReviewsComponent } from './movie-reviews/movie-reviews.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReviewDialogComponent,
     BestMoviesComponent,
     MovieSearchComponent,
-    ShortTitlePipe
+    ShortTitlePipe,
+    MovieReviewsComponent
   ],
   imports: [
     BrowserModule,

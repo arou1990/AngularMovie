@@ -1,7 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DialogBoxInfo } from '../classes/DialogBoxInfo';
-import { User } from '../classes/User';
+import { UserService } from '../services/user.service';
+import { IMovieInfo } from '../interfaces/IMovieInfo';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MovieReviewService } from '../services/movie-review.service';
+import { IMovieReview } from '../interfaces/IMoveReview';
+import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-review-dialog',
@@ -10,28 +14,58 @@ import { User } from '../classes/User';
 })
 export class ReviewDialogComponent implements OnInit {
 
-  currentMovieName: string = "Default";
-  dialogUserName: string = "Default";
+  form: FormGroup = new FormGroup({
+    review: new FormControl(''),
+    score: new FormControl('')
+  });
 
-  constructor(public dialogRef: MatDialogRef<ReviewDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { 
-    this.currentMovieName = data.movieName;
+  public currentMovie: IMovieInfo = {
+    id: "",
+    Title: "",
+    Poster: "",
+    Ratings: [],
+    Released: "",
+    Runtime: "",
+    Plot: "",
+  };
+
+  private userName: string = '';
+
+  constructor(
+    private notificationService: NotificationService,
+    private movieReviewService: MovieReviewService,
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    public dialogRef: MatDialogRef<ReviewDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { 
+    this.currentMovie = data.currentMovie;
   }
 
   ngOnInit(): void {
+    this.userName = this.userService.GetUserName();
+    this.form = this.formBuilder.group({
+      review: ['', Validators.required],
+      score: ['', Validators.required],
+    })
+  }
 
-    let name: string = localStorage.getItem('loggedInUser') as string;
+  saveReview(){
+    let review = this.form.value.review;
+    let score = this.form.value.score;
 
-    let parseUser : User = JSON.parse(name) as User;
-    let dialogBoxInfo : DialogBoxInfo = { 
-      userName : parseUser.username, movieName : this.currentMovieName
+    let userMovieReview: IMovieReview = {
+      favorite: false,
+      movieName: this.currentMovie.Title,
+      review: review,
+      score: score,
+      userName: this.userName
     };
-    this.dialogUserName = parseUser.username;
-    
+
+    this.movieReviewService.saveMovieReview(userMovieReview);
+    this.closeDialog();
   }
 
   closeDialog(): void {
     this.dialogRef.close();
   }
-
-  favorite(){}
 }

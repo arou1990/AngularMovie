@@ -6,6 +6,8 @@ import { SearchService } from '../services/search.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { IMovieInfo } from '../interfaces/IMovieInfo';
+import { MovieReviewService } from '../services/movie-review.service';
+import { IMovieReview } from '../interfaces/IMoveReview';
 
 @Component({
   selector: 'app-movie-search',
@@ -16,53 +18,59 @@ export class MovieSearchComponent implements OnInit {
 
   searchTextBox = new FormControl();
 
-  public currentMovieInfo: IMovieInfo ={
+  public currentMovieInfo: IMovieInfo = {
     id: "",
     Title: "",
     Poster: "",
     Ratings: [],
-    Released:"",
-    Runtime:"",
-    Plot:"",
+    Released: "",
+    Runtime: "",
+    Plot: "",
   }
 
-  constructor(public dialog: MatDialog, private searchService: SearchService) {}
-  
-    ngOnInit(): void {
-      this.searchTextBox.valueChanges.pipe(debounceTime(1000)).subscribe(input =>{
-        this.searchUpdate(input);
-      })
-    }
+  public currentReviews: IMovieReview[] = [];
 
-    public openReviewDialogue(): void{
+  constructor(public dialog: MatDialog, private searchService: SearchService, private movieReviewService: MovieReviewService) {}
+
+  ngOnInit(): void {
+    this.searchTextBox.valueChanges.pipe(debounceTime(1000)).subscribe(input => {
+      this.searchUpdate(input);
+    })
+  }
+
+  public openReviewDialogue(): void {
 
     let DialogRef = this.dialog.open(ReviewDialogComponent, {
       height: '350px',
       width: '300px',
-      data: {movieName: 'Searched Movie'}
-    });
-
-    }
-
-    public searchUpdate(event: any): void{
-
-      if(event.length > 2){
-        this.searchService.GetMovieInfo(event).subscribe(data => {
-          if(data){
-            this.currentMovieInfo = {
-              id: data.Title,
-              Title: data.Title,
-              Poster: data.Poster,
-              Ratings: data.Ratings,
-              Released: data.Released,
-              Runtime: data.Runtime,
-              Plot: data.Plot,
-            }
-          }
-        });
+      data: {
+        currentMovie: this.currentMovieInfo,
       }
-      console.log(JSON.stringify(event));
+    });
+  }
+
+  public searchUpdate(event: any): void {
+
+    if (event.length > 2) {
+      this.searchService.GetMovieInfo(event).subscribe(data => {
+        if (data) {
+          this.currentMovieInfo = {
+            id: data.Title,
+            Title: data.Title,
+            Poster: data.Poster,
+            Ratings: data.Ratings,
+            Released: data.Released,
+            Runtime: data.Runtime,
+            Plot: data.Plot,
+          }
+
+          this.getCurrentReviews(data.Title);
+        }
+      });
     }
+  }
 
-
+  public getCurrentReviews(movieName: string){
+    this.currentReviews = this.movieReviewService.getReviewsForMovie(movieName);
+  }
 }

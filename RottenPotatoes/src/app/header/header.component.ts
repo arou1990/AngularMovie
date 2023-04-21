@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NotificationService } from '../services/notification.service';
-import { User } from '../classes/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   loginName: string = "Default";
 
-  constructor(private router: Router, private snackBar: NotificationService) {}
+  constructor(private router: Router, private snackBar: NotificationService, private userService: UserService) {}
 
   public signout(){
     localStorage.setItem('loggedInUser', '');
@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    let user: string = localStorage.getItem('loggedInUser') as string;
-
-    let parsedUser : User = JSON.parse(user) as User;
-    this.loginName = parsedUser.username;
+    this.loginName = this.userService.GetUserName();
   }
 }

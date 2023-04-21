@@ -13,6 +13,9 @@ export class ConfigService {
   getApiKey(): string {
     try{
       let apiCOnfig: IConfig = apiKey;
+      if(apiCOnfig.APIKEY == ""){
+        this.notificationService.showSnackBar("API Key is blank, please update it.")
+      }
       return apiCOnfig.APIKEY;
     }
     catch

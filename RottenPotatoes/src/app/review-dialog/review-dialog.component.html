@@ -1,15 +1,13 @@
 <div class="reviewFormContainer">
-  <h1>{{currentMovieName}}</h1>
-<form class="userReview">
+  <h1>{{currentMovie.Title}}</h1>
+  <form class="userScore" class="form" [formGroup]="form" (ngSubmit)="saveReview()">
   <mat-form-field appearance="fill">
     <mat-label>User Review</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName="review"></textarea>
   </mat-form-field>
-</form>
-<form class="userScore">
   <mat-form-field appearance="fill">
     <mat-label>User Score</mat-label>
-    <mat-select>
+    <mat-select formControlName="score">
       <mat-option value="1">1/10</mat-option>
       <mat-option value="2">2/10</mat-option>
       <mat-option value="3">3/10</mat-option>
@@ -24,7 +22,5 @@
   </mat-form-field>
   <button class="submitReview" mat-raised-button color="primary">Submit Review</button>
   <button class="Cancel" mat-raised-button color="primary" (click)="closeDialog()">Cancel</button>
-  <mat-icon (click)="favorite()" class="favoriteIcon">favorite</mat-icon>
-  <h4>{{dialogUserName}}</h4>
 </form>
 </div>

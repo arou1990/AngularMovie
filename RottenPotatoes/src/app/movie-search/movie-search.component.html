@@ -15,6 +15,10 @@
     <div *ngIf="currentMovieInfo.Plot != ''">Plot: {{currentMovieInfo.Plot}}</div>
     </div>
     <div class="userReviews">
+
+      <div *ngFor="let review of currentReviews">
+        <app-movie-reviews [movieReview]="review"></app-movie-reviews>
+      </div>
       <button class="reviewButton" mat-raised-button color="primary" (click)="openReviewDialogue()">Add Review</button>
     </div>
   </div>

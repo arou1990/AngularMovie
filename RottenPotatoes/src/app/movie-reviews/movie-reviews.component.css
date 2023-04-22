@@ -1,0 +1,13 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .reviewSpacing{
+    margin: 10px;
+    width: 97%;
+    
+  }
+
+  .reviewText{
+    padding-top: 20px;
+  }

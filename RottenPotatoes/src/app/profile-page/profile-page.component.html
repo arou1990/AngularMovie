@@ -1,1 +1,22 @@
-<p>profile-page works!</p>
+<app-header></app-header>
+<div class="profileContainer">
+  <div class="profileGrid">
+    <div class="myReviews">
+      <h1 class="reviewHeading">My Reviews</h1>
+      <div *ngFor="let review of movieReviews">
+        <div>
+          <app-movie-reviews [viewMode]="viewMode" [movieReview]="review"></app-movie-reviews>
+        </div>
+      </div>
+
+    </div>
+    <div class="myFavorites">
+      <h1>My Favorite Movies</h1>
+      <div *ngFor="let review of favoriteMovies">
+        <div>
+          <app-movie-reviews [viewMode]="viewMode" [movieReview]="review"></app-movie-reviews>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

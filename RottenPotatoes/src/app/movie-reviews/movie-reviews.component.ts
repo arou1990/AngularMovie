@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IMovieReview } from '../interfaces/IMoveReview';
 import { FormControl } from '@angular/forms';
 import { MovieReviewService } from '../services/movie-review.service';
+import { IMovieReviewMode } from '../interfaces/IMovieReviewMode';
 
 @Component({
   selector: 'app-movie-reviews',
@@ -10,6 +11,13 @@ import { MovieReviewService } from '../services/movie-review.service';
 })
 export class MovieReviewsComponent {
 
+  @Input() viewMode: IMovieReviewMode = {
+    showScore: true,
+    showReview: true,
+    showMovieName: true,
+    showUserName: true,
+    showFavorite: true
+  }
 
   @Input() movieReview: IMovieReview = {
     favorite: false,
@@ -19,14 +27,15 @@ export class MovieReviewsComponent {
     userName: ''
   };
 
-  constructor(private movieReviewService: MovieReviewService){}
+  constructor(private movieReviewService: MovieReviewService) {}
 
-  deleteMovie(){
+  deleteMovie() {
     this.movieReviewService.deleteMovieReview(this.movieReview);
 
   }
 
-  toggleFavorite(){
-
+  toggleFavorite() {
+    let favoriteStatus = this.movieReview?false: true;
+    this.movieReviewService.updateFavoriteStatus(this.movieReview, favoriteStatus);
   }
 }

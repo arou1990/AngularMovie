@@ -36,12 +36,11 @@ export class MovieReviewService {
   deleteMovieReview(movieReview: IMovieReview): void{
     let movieReviews = localStorage.getItem('movieReviews') as string;
     let currentMovieReviews = JSON.parse(movieReviews) as IMovieReview[];
-    let allMoviesButCurrent = currentMovieReviews.filter(cmr => (cmr.userName != movieReview.userName) && (cmr.movieName != movieReview.movieName));
+    let allMoviesButCurrent = currentMovieReviews.filter(cmr => (cmr.userName == movieReview.userName) && (cmr.movieName != movieReview.movieName));
     localStorage.setItem("movieReviews", JSON.stringify(allMoviesButCurrent));
-
   }
 
-  getMoviesByUser(userName: string): IMovieReview[]{
+  getMovieReviewsByUser(userName: string): IMovieReview[]{
     let movieReviews = localStorage.getItem('movieReviews') as string;
     let currentMovieReviews = JSON.parse(movieReviews) as IMovieReview[];
     let allReviewsByUser = currentMovieReviews.filter(cmr => (cmr.userName == userName));
@@ -65,7 +64,7 @@ export class MovieReviewService {
   updateFavoriteStatus(movieReview: IMovieReview, status: boolean): boolean{
     let movieReviews = localStorage.getItem('movieReviews') as string;
     let currentMovieReviews = JSON.parse(movieReviews) as IMovieReview[];
-    let allMoviesButCurrent = currentMovieReviews.filter(cmr => (cmr.userName != movieReview.userName) && (cmr.movieName != movieReview.movieName));
+    let allMoviesButCurrent = currentMovieReviews.filter(cmr => (cmr.userName == movieReview.userName) && (cmr.movieName != movieReview.movieName));
     movieReview.favorite = status;
     allMoviesButCurrent.push(movieReview);
     localStorage.setItem("movieReviews", JSON.stringify(allMoviesButCurrent));

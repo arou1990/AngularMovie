@@ -1,0 +1,37 @@
+.profileContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px;
+    height: 1150px;
+    background-color: #95afc0;
+    outline: 2px solid black;
+    padding-bottom: 20px;
+    
+}
+
+.profileGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 20px;
+    font-weight: bolder;
+}
+
+.myReviews{
+    width: 700px;
+    height: 1000px;
+    background-color: #95afc0;
+    outline: 2px solid black;
+    margin-top: 60px;
+}
+
+.myFavorites{
+    width: 700px;
+    height: 1000px;
+    background-color: #95afc0;
+    outline: 2px solid black;
+    margin-top: 60px;
+}
+

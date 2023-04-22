@@ -23,4 +23,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.loginName = this.userService.GetUserName();
   }
+
+  public onSettings(): void {
+    this.router.navigateByUrl('/profile');
+  }
+
+  public navigateToMain(): void{
+    this.router.navigateByUrl('/main');
+  }
 }

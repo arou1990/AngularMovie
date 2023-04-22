@@ -1,11 +1,11 @@
-<div class = "mainContainer">
-<app-header></app-header>
-<div class = "movieContainer">
-<div class="movieGrid">
-    <span *ngFor="let m of bestMovies">
-    <app-best-movies [movie]="m"></app-best-movies>
-    </span>
-</div>
-</div>
-<app-movie-search></app-movie-search>
+<div class="mainContainer">
+  <app-header></app-header>
+  <div class="movieContainer">
+    <div class="movieGrid">
+      <span *ngFor="let m of bestMovies">
+        <app-best-movies [movie]="m"></app-best-movies>
+      </span>
+    </div>
+  </div>
+  <app-movie-search></app-movie-search>
 </div>

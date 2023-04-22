@@ -1,6 +1,10 @@
-<h3>{{movieReview.movieName}}</h3>
-<h3>{{movieReview.score}}</h3>
-<h3>{{movieReview.review}}</h3>
-<h3>{{movieReview.userName}}</h3>
-<mat-icon (click)="deleteMovie()">delete</mat-icon>
-<mat-icon (click)="toggleFavorite()">heart</mat-icon>
+<mat-toolbar class="reviewSpacing" color="secondary">
+  <mat-toolbar-row>
+    <span class="reviewText">
+      <h3><span *ngIf="viewMode.showMovieName">{{movieReview.movieName}}</span>{{movieReview.score}}{{movieReview.review}}<span *ngIf="viewMode.showUserName">{{movieReview.userName}}</span></h3>
+    </span>
+    <span class="example-spacer"></span>
+    <mat-icon class="deleteButton" (click)="deleteMovie()">delete</mat-icon>
+    <mat-icon (click)="toggleFavorite()">favorite</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>

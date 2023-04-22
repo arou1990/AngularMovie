@@ -33,14 +33,14 @@ export class LoginPageComponent implements OnInit {
         localStorage.setItem('loggedInUser', JSON.stringify({
           username: username
         }));
-        this.snackBar.showSnackBar('Login Successful')
-        this.router.navigateByUrl('/main')
+        this.snackBar.showSnackBar('Login Successful');
+        this.router.navigateByUrl('/main');
         tryLogin = true;
       }
     }
     if (!tryLogin) {
       localStorage.setItem('loggedInUser', '');
-      this.snackBar.showSnackBar('Invalid Login')
+      this.snackBar.showSnackBar('Invalid Login');
     }
   }
 }

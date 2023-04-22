@@ -1,9 +1,10 @@
 <mat-toolbar class="headerToolbar">
-  <span class="title">Rotten Potatoes</span>
-  <img class="titleImage" src="assets/images/Rotten_Potato.png" />
+  <div (click)="navigateToMain()">
+    <span class="title">Rotten Potatoes</span>
+    <img class="titleImage" src="assets/images/Rotten_Potato.png" />
+  </div>
   <span class="example-spacer"></span>
   <span class="headericon">{{loginName}}</span>
-  <mat-icon class="headericon">account_circle</mat-icon>
-  <mat-icon class="headericon">settings</mat-icon>
+  <mat-icon class="headericon" (click)="onSettings()">settings</mat-icon>
   <mat-icon (click)="signout()" class="headericon">logout</mat-icon>
 </mat-toolbar>

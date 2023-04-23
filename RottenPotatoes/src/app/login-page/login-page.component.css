@@ -1,5 +1,3 @@
-
-
 #projectorContainer {
   position: relative;
   height: 200px;
@@ -83,7 +81,7 @@
   position: absolute;
   height: 50%;
   top: 30px;
-  left: 30px;
+  left: 60px;
 }
 
 .lens {
@@ -106,30 +104,6 @@
   background-color: gray;
 }
 
-.projectorLight {
-  position: absolute;
-  opacity: 0.8;
-  height: 60%;
-  width: 90%;
-  left: 110%;
-  top: 42.9%;
-  background-color: rgb(255, 228, 196);
-  animation: light 0.9s infinite;
-}
-
-.projectorLight :nth-child(1) {
-  top: -15%;
-  transform: rotate(-12deg);
-}
-
-.projectorLight :nth-child(2) {
-  bottom: -15%;
-  transform: rotate(12deg);
-}
-
-/*****
-.cover background must be the same as the page background.
-*****/
 .cover {
   position: absolute;
   background: #b2bec3;
@@ -183,6 +157,7 @@ h1 {
   height: 435px;
   padding: 20px;
   width: 320px;
+  outline: 2px solid#eee;
 }
 
 .title {

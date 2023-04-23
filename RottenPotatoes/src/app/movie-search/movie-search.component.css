@@ -4,6 +4,15 @@
     background-color: #95afc0;
     outline: 2px solid black;
     padding-bottom: 20px;
+    background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
 }
 
 .wideSearch{
@@ -16,12 +25,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     padding: 10px;
+    justify-items: center;
 }
 
 .searchedMovie{
     width: 300px;
     height: 300px;
-    background-color: #95afc0;
     outline: 2px solid black;
 }
 
@@ -33,22 +42,33 @@
 .movieInfo{
     width: 300px;
     height: 300px;
-    background-color: #95afc0;
     outline: 2px solid black;
     font-weight: bolder;
+    background-color: black;
 }
 
 .userReviews{
     width: 300px;
     height: 300px;
-    background-color: #95afc0;
     outline: 2px solid black;
     position: relative;
     font-weight: bolder;
+    background-color: black;
 }
 
 .reviewButton{
     position: absolute;
     bottom: 0;
-    left: 0;
+    width: 100%;
+}
+
+.plot{
+    margin: 5px;
+    background-color: black;
+    color: white;
+    overflow-y: auto;
+}
+
+.movieReviewContainer{
+    margin-right: 11px;
 }

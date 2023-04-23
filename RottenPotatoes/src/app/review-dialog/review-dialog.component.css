@@ -9,4 +9,12 @@
     padding-top: 40px;
     text-align: center;
     background-color: rgb(255, 255, 255);
+    width: 100%;
+    outline: 2px solid white;
+}
+
+.reviewButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
 }

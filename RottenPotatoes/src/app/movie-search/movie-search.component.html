@@ -1,7 +1,8 @@
 <div class="searchedMovieContainer">
   <form>
     <mat-form-field class="wideSearch">
-      <input class="wideSearch" type="search" name ="searchTextBox" [formControl]="searchTextBox" matInput placeholder="Search">
+      <input class="wideSearch" type="search" name="searchTextBox" [formControl]="searchTextBox" matInput
+        placeholder="Search">
     </mat-form-field>
   </form>
   <div class="movieGrid" *ngIf="currentMovieInfo.id != ''">
@@ -9,15 +10,21 @@
       <img *ngIf="currentMovieInfo.Poster != ''" [src]="currentMovieInfo.Poster" class="moviePoster" alt="">
     </div>
     <div class="movieInfo">
-    <div *ngIf="currentMovieInfo.Title != ''">Title: {{currentMovieInfo.Title}}</div>
-    <div *ngIf="currentMovieInfo.Released != ''">Released: {{currentMovieInfo.Released}}</div>
-    <div *ngIf="currentMovieInfo.Runtime != ''">Runtime: {{currentMovieInfo.Runtime}}</div>
-    <div *ngIf="currentMovieInfo.Plot != ''">Plot: {{currentMovieInfo.Plot}}</div>
+      <mat-toolbar>
+        <div *ngIf="currentMovieInfo.Title != ''">Title: {{currentMovieInfo.Title}}</div>
+      </mat-toolbar>
+      <mat-toolbar>
+        <div *ngIf="currentMovieInfo.Released != ''">Released: {{currentMovieInfo.Released}}</div>
+      </mat-toolbar>
+      <mat-toolbar>
+        <div *ngIf="currentMovieInfo.Runtime != ''">Runtime: {{currentMovieInfo.Runtime}}</div>
+      </mat-toolbar>
+      <div class="plot" *ngIf="currentMovieInfo.Plot != ''">Plot: {{currentMovieInfo.Plot}}</div>
     </div>
     <div class="userReviews">
 
-      <div *ngFor="let review of currentReviews">
-        <app-movie-reviews [movieReview]="review"></app-movie-reviews>
+      <div class="movieReviewContainer" *ngFor="let review of currentReviews">
+        <app-movie-reviews [viewMode]="viewMode" [movieReview]="review"></app-movie-reviews>
       </div>
       <button class="reviewButton" mat-raised-button color="primary" (click)="openReviewDialogue()">Add Review</button>
     </div>

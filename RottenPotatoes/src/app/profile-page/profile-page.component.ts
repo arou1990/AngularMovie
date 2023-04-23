@@ -16,8 +16,11 @@ export class ProfilePageComponent implements OnInit{
     showReview: true,
     showMovieName: true,
     showUserName: false,
-    showFavorite: true
+    showFavorite: true,
+    showDelete: true
   }
+
+  loginName: string ='';
 
   public movieReviews: IMovieReview[] = []
   public favoriteMovies: IMovieReview[] = []
@@ -25,10 +28,13 @@ export class ProfilePageComponent implements OnInit{
   constructor(private movieReviewService: MovieReviewService, private userService: UserService){}
 
   ngOnInit(): void {
-    let loginName = this.userService.GetUserName();
-    this.movieReviews = this.movieReviewService.getMovieReviewsByUser(loginName);
-    console.log(JSON.stringify(this.movieReviews));
-    this.favoriteMovies = this.movieReviewService.getFavoriteMoviesByUser(loginName);
-    console.log(JSON.stringify(this.favoriteMovies));
-  } 
+    this.loginName = this.userService.GetUserName();
+    this.movieReviews = this.movieReviewService.getMovieReviewsByUser(this.loginName).sort((a, b) => a.movieName.localeCompare(b.movieName));
+    this.favoriteMovies = this.movieReviewService.getFavoriteMoviesByUser(this.loginName).sort((a, b) => a.movieName.localeCompare(b.movieName));
+  }
+
+  refreshReviews(review: IMovieReview): void {
+    this.movieReviews = this.movieReviewService.getMovieReviewsByUser(this.loginName).sort((a, b) => a.movieName.localeCompare(b.movieName));
+    this.favoriteMovies = this.movieReviewService.getFavoriteMoviesByUser(this.loginName).sort((a, b) => a.movieName.localeCompare(b.movieName));
+  }
 }

@@ -4,4 +4,5 @@ export interface IMovieReviewMode{
     showMovieName: boolean;
     showUserName: boolean;
     showFavorite: boolean;
+    showDelete: boolean;
 }

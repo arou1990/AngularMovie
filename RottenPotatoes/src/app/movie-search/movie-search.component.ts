@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {ISearchedMovie} from '../interfaces/ISearchedMovie'
+import { Component, OnInit } from '@angular/core';
 import { ReviewDialogComponent } from '../review-dialog/review-dialog.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { SearchService } from '../services/search.service';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { IMovieInfo } from '../interfaces/IMovieInfo';
 import { MovieReviewService } from '../services/movie-review.service';
 import { IMovieReview } from '../interfaces/IMoveReview';
+import { IMovieReviewMode } from '../interfaces/IMovieReviewMode';
 
 @Component({
   selector: 'app-movie-search',
@@ -15,6 +15,15 @@ import { IMovieReview } from '../interfaces/IMoveReview';
   styleUrls: ['./movie-search.component.css']
 })
 export class MovieSearchComponent implements OnInit {
+
+  viewMode: IMovieReviewMode = {
+    showScore: true,
+    showReview: true,
+    showMovieName: false,
+    showUserName: false,
+    showFavorite: false,
+    showDelete: false
+  }
 
   searchTextBox = new FormControl();
 
@@ -41,10 +50,15 @@ export class MovieSearchComponent implements OnInit {
   public openReviewDialogue(): void {
 
     let DialogRef = this.dialog.open(ReviewDialogComponent, {
-      height: '350px',
-      width: '300px',
+      height: '320px',
+      width: '250px',
       data: {
         currentMovie: this.currentMovieInfo,
+      }
+    });
+    DialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.getCurrentReviews(this.currentMovieInfo.Title);
       }
     });
   }
@@ -63,7 +77,6 @@ export class MovieSearchComponent implements OnInit {
             Runtime: data.Runtime,
             Plot: data.Plot,
           }
-
           this.getCurrentReviews(data.Title);
         }
       });

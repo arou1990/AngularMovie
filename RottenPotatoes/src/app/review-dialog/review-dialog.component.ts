@@ -62,10 +62,10 @@ export class ReviewDialogComponent implements OnInit {
     };
 
     this.movieReviewService.saveMovieReview(userMovieReview);
-    this.closeDialog();
+    this.closeDialog(true);
   }
 
-  closeDialog(): void {
-    this.dialogRef.close();
+  closeDialog(saved: boolean): void {
+    this.dialogRef.close(saved);
   }
 }

@@ -4,7 +4,7 @@
       <h3><span *ngIf="viewMode.showMovieName">{{movieReview.movieName}}</span>{{movieReview.score}}{{movieReview.review}}<span *ngIf="viewMode.showUserName">{{movieReview.userName}}</span></h3>
     </span>
     <span class="example-spacer"></span>
-    <mat-icon class="deleteButton" (click)="deleteMovie()">delete</mat-icon>
-    <mat-icon (click)="toggleFavorite()">favorite</mat-icon>
+    <mat-icon *ngIf="viewMode.showFavorite" (click)="toggleFavorite()">favorite</mat-icon>
+    <mat-icon *ngIf="viewMode.showDelete" class="deleteButton" (click)="deleteMovie()">delete</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMovieReview } from '../interfaces/IMoveReview';
 import { FormControl } from '@angular/forms';
 import { MovieReviewService } from '../services/movie-review.service';
@@ -16,7 +16,8 @@ export class MovieReviewsComponent {
     showReview: true,
     showMovieName: true,
     showUserName: true,
-    showFavorite: true
+    showFavorite: true,
+    showDelete: false
   }
 
   @Input() movieReview: IMovieReview = {
@@ -27,15 +28,18 @@ export class MovieReviewsComponent {
     userName: ''
   };
 
+  @Output() reviewUpdated = new EventEmitter<boolean>();
+
   constructor(private movieReviewService: MovieReviewService) {}
 
   deleteMovie() {
     this.movieReviewService.deleteMovieReview(this.movieReview);
-
+    this.reviewUpdated.emit(true);
   }
 
   toggleFavorite() {
-    let favoriteStatus = this.movieReview?false: true;
+    let favoriteStatus = this.movieReview.favorite ? false: true;
     this.movieReviewService.updateFavoriteStatus(this.movieReview, favoriteStatus);
+    this.reviewUpdated.emit(true);
   }
 }

@@ -1,50 +1,36 @@
-# RottenPotatoes
+## Summary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This was a learning project in order to get familiar with building single page applications in Angular.  This helped me to learn HTML, TypeScript, and CSS.  It also helped me to get familiar with Node, Angular CLI, and using a 3rd party UI component library.  I learned basic workflow with Github by creating new branches, staging changes, pushing, pulling, and merging branches.
 
 ## Project Dependencies
-- Please get an API key from [API](https://www.omdbapi.com/) &
+- Please get an API key from [API](https://www.omdbapi.com/)
 - Angular libraries (seen in package.json)
 - Material Angular
 
 
 ## Installing & Running the project
 
-First please install of the libraries required to run the application. [API](https://www.omdbapi.com/)
-- Update **assets/config/search-api-key.json** with your API key from
+First please install the libraries required to run the application
+- Make sure you have node installed
+- Make sure Angular CLI is installed
+- Update **assets/config/search-api-key.json** with your API key from [API](https://www.omdbapi.com/)
 - Run the command `npm install`
 - Run the command `ng serve -o` if the browser does not open please navigate to `http://localhost:4200/`
 
+Signin credentials are:
+    - User: user1
+    - Password: test
+Alternate:
+    - User: user2
+    - Password: test
 
-## Project Technologies
+
+## Notable Project Elements
+
 - Reactive Forms
 - Custom Services
 - Importing a config file
-- Use of Angular CLI to generate components, services, guards
+- Use of Angular CLI to generate components, services, guards, pipes, and guards
 - Use of assets folder
 - Use of click events
 - Use of onvaluechanges
@@ -52,15 +38,19 @@ First please install of the libraries required to run the application. [API](htt
 - Use of Input tag [Input](https://angular.io/api/core/Input)
 - Use of Interpolation [Interpolation](https://angular.io/guide/interpolation)
 - Use of Angular material
-- Dialog
-- Toolbar
-- Icon
-- Form Fields
+    - Dialog
+    - Toolbar
+    - Icon
+    - SnackBar
+    - Form Fields
 - Use of HTTPClient, contacting an external 3rd party API [API](https://www.omdbapi.com/)
 - Use of subscriptions
 - Use of localstorage
 - Use of event emitters
-- Adding to & sorting Arrays
+- Arrays
+    - Adding
+    - Filtering
+    - Sorting
 - *ngFor & *ngIf
 - Pipes
 - Angular Router & canActivate
@@ -77,18 +67,18 @@ All routes are configured in the routerconfig.ts. [canActivate](https://angular.
 - Using an unsecure method of tracking credentials to login (all managed in local storage)
 - Using notifications to show user has logged in, has been denied logging in
 
-## Header Component
+### Header Component
 
-- Angular Routing and On Click events to mavigate between main page, profile page, and login page
+- Angular Routing and On Click events to navigate between main page, profile page, and login page
 - Angular Material Snack Bar notifications to show successful logout
 
-## Main Page
+### Main Page
 
 - Static data coded in to show our favorite movies
 - Use of interface and *ngFor to display favorite movie info
 - Use of Pipes to shorten movie title text if it exceed 20 characters
 
-## Movie Search Component
+### Movie Search Component
 
 - Angular form used to create search bar
 - Search Service implemented to access an API for movie info
@@ -98,39 +88,39 @@ All routes are configured in the routerconfig.ts. [canActivate](https://angular.
 - Use of *ngIf and *ngFor to display searched movie info
 - Use of on click events to open review dialog
 
-## Profile Page Component
+### Profile Page Component
 
-- Displays currently logged in user's movie reviews and allows user to favorite and unfavorite movies
+- Displays currently logged in user's movie reviews and allows user to favorite, unfavorite, and delete them
 
-## Movie Review Component
+### Movie Review Component
 
 - Used to display movies that have been reviewed and favorited
 - Event emitters used to actively refresh list of both reviewed movies and favorited movies
 
-## Services:
+## Services
 
-## Config Service
+### Config Service
 
 - Used to retrieve API key
 - SnackBar notifications used to let user know if there are any issues with the key
 
-## Movie Review Service
+### Movie Review Service
 
 - Contains logic for saving, deleting, favoriting, and retrieving movie reviews and favorite status
 
-## Notification Service
+### Notification Service
 
 - Angular Materials SnackBar notification service to display messages throughout the app
 
-## Search Service
+### Search Service
 
 - Creates link used to make webcalls to the movie API
 - HTTP client and Observable used for get requests to movie API to fetch movie data
 
-## User Service
+### User Service
 
 - Retrieves currently logged in user to display username and log reviews by user
 
-## Auth Guard
+### Auth Guard
 
 - Use of Observable to check if user has successfully login and if not return them back to the login page

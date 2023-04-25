@@ -1,21 +1,21 @@
 <app-header></app-header>
 <div class="profileContainer commonbackground">
-    <div class="myReviewsFavorites">
-      <h1 class="reviewHeading">My Reviews</h1>
-      <div *ngFor="let review of movieReviews">
-        <div>
-          <app-movie-reviews (reviewUpdated)='refreshReviews(review)' [viewMode]="viewMode" [movieReview]="review">
-          </app-movie-reviews>
-        </div>
-      </div>
-    </div>
-    <div class="myReviewsFavorites">
-      <h1>My Favorite Movies</h1>
+  <div class="myReviewsFavorites">
+    <h1>My Reviews</h1>
+    <div *ngFor="let review of movieReviews">
       <div>
-        <div *ngFor="let review of favoriteMovies">
-          <app-movie-reviews (reviewUpdated)='refreshReviews(review)' [viewMode]="viewMode" [movieReview]="review">
-          </app-movie-reviews>
-        </div>
+        <app-movie-reviews (reviewUpdated)='refreshReviews(review)' [viewMode]="viewMode" [movieReview]="review">
+        </app-movie-reviews>
       </div>
     </div>
+  </div>
+  <div class="myReviewsFavorites">
+    <h1>My Favorite Movies</h1>
+    <div>
+      <div *ngFor="let review of favoriteMovies">
+        <app-movie-reviews (reviewUpdated)='refreshReviews(review)' [viewMode]="viewMode" [movieReview]="review">
+        </app-movie-reviews>
+      </div>
+    </div>
+  </div>
 </div>

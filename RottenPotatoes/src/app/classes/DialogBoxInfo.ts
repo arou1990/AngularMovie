@@ -1,4 +1,4 @@
-export class DialogBoxInfo{
-    userName : string = ''
-    movieName: string = ''
+export class DialogBoxInfo {
+  userName: string = '';
+  movieName: string = '';
 }

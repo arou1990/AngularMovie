@@ -1,7 +1,8 @@
-.headerToolbar{
+.headerToolbar {
   background-color: #2f3640;
   color: white;
 }
+
 .headericon {
   float: right;
   margin-left: 5px;
@@ -29,8 +30,4 @@
   width: 50px;
   top: 64px;
   left: 465px;
-}
-
-.headertoolbar{
-  background-color:#353b48;
 }

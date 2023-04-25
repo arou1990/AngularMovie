@@ -14,6 +14,4 @@ export class BestMoviesComponent {
     ourScore: "10/10",
     imageSrc: "https://picsum.photos/200/300"
   }
-
-
 }

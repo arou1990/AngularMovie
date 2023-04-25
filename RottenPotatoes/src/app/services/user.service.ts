@@ -6,11 +6,11 @@ import { User } from '../classes/User';
 })
 export class UserService {
 
-  constructor() { }
+  constructor() {}
 
   public GetUserName(): string {
     let name: string = localStorage.getItem('loggedInUser') as string;
-    let parseUser : User = JSON.parse(name) as User;
+    let parseUser: User = JSON.parse(name) as User;
     return parseUser.username;
   }
 }

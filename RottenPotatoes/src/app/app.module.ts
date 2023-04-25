@@ -54,8 +54,8 @@ import { MovieReviewsComponent } from './movie-reviews/movie-reviews.component';
     MatSelectModule,
     HttpClientModule,
     FormsModule
-],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

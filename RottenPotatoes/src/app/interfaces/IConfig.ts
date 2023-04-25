@@ -1,3 +1,3 @@
-export interface IConfig{
-    APIKEY: string;
+export interface IConfig {
+  APIKEY: string;
 }

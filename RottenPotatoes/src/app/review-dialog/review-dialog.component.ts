@@ -5,7 +5,6 @@ import { IMovieInfo } from '../interfaces/IMovieInfo';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MovieReviewService } from '../services/movie-review.service';
 import { IMovieReview } from '../interfaces/IMoveReview';
-import { NotificationService } from '../services/notification.service';
 
 @Component({
   selector: 'app-review-dialog',
@@ -26,18 +25,17 @@ export class ReviewDialogComponent implements OnInit {
     Ratings: [],
     Released: "",
     Runtime: "",
-    Plot: "",
+    Plot: ""
   };
 
   private userName: string = '';
 
   constructor(
-    private notificationService: NotificationService,
     private movieReviewService: MovieReviewService,
     private formBuilder: FormBuilder,
     private userService: UserService,
-    public dialogRef: MatDialogRef<ReviewDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { 
+    public dialogRef: MatDialogRef < ReviewDialogComponent > ,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
     this.currentMovie = data.currentMovie;
   }
 
@@ -46,10 +44,10 @@ export class ReviewDialogComponent implements OnInit {
     this.form = this.formBuilder.group({
       review: ['', Validators.required],
       score: ['', Validators.required],
-    })
+    });
   }
 
-  saveReview(){
+  saveReview() {
     let review = this.form.value.review;
     let score = this.form.value.score;
 

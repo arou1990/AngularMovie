@@ -12,5 +12,4 @@ export class ShortTitlePipe implements PipeTransform {
       return value;
     }
   }
-
 }

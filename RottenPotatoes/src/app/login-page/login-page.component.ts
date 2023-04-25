@@ -8,6 +8,7 @@ import { NotificationService } from '../services/notification.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
+
 export class LoginPageComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
@@ -15,7 +16,8 @@ export class LoginPageComponent implements OnInit {
     password: new FormControl('')
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private snackBar: NotificationService ) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private snackBar: NotificationService) {}
+
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],

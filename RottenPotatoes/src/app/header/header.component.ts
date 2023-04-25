@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router, private snackBar: NotificationService, private userService: UserService) {}
 
-  public signout(){
+  public signout() {
     localStorage.setItem('loggedInUser', '');
     this.router.navigateByUrl('/login');
     this.snackBar.showSnackBar('Logout Successful');
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/profile');
   }
 
-  public navigateToMain(): void{
+  public navigateToMain(): void {
     this.router.navigateByUrl('/main');
   }
 }

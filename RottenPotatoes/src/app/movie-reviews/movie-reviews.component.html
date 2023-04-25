@@ -1,7 +1,9 @@
 <mat-toolbar class="reviewSpacing" color="secondary">
   <mat-toolbar-row>
     <span class="reviewText">
-      <h3><span *ngIf="viewMode.showMovieName">{{movieReview.movieName}}</span>{{movieReview.score}}{{movieReview.review}}<span *ngIf="viewMode.showUserName">{{movieReview.userName}}</span></h3>
+      <h3><span
+          *ngIf="viewMode.showMovieName">{{movieReview.movieName}}</span>{{movieReview.score}}{{movieReview.review}}<span
+          *ngIf="viewMode.showUserName">{{movieReview.userName}}</span></h3>
     </span>
     <span class="example-spacer"></span>
     <mat-icon *ngIf="viewMode.showFavorite" (click)="toggleFavorite()">favorite</mat-icon>

@@ -1,5 +1,4 @@
-export interface IRating
-{
-    Source: string;
-    Value: string;
+export interface IRating {
+  Source: string;
+  Value: string;
 }

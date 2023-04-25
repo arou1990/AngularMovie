@@ -1,19 +1,19 @@
-.bestMovie{
-    width: 300px;
-    height: 350px;
-    background-color: black;
-    outline: 2px solid white;
-    color: white;
+.bestMovie {
+  width: 300px;
+  height: 350px;
+  background-color: black;
+  outline: 2px solid white;
+  color: white;
 }
 
-.moviePoster{
-    height: 90%;
-    width: 100%;
+.moviePoster {
+  height: 90%;
+  width: 100%;
 }
 
-.reviewDetails{
-    height: 15px;
-    padding-top: 5px;
-    font-size: 12px;
-    text-align: center;
+.reviewDetails {
+  height: 15px;
+  padding-top: 5px;
+  font-size: 12px;
+  text-align: center;
 }

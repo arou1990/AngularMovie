@@ -8,22 +8,18 @@ import { NotificationService } from './notification.service';
 })
 export class ConfigService {
 
-  constructor(private notificationService: NotificationService) { }
+  constructor(private notificationService: NotificationService) {}
 
   getApiKey(): string {
-    try{
+    try {
       let apiCOnfig: IConfig = apiKey;
-      if(apiCOnfig.APIKEY == ""){
+      if (apiCOnfig.APIKEY == "") {
         this.notificationService.showSnackBar("API Key is blank, please update it.")
       }
       return apiCOnfig.APIKEY;
-    }
-    catch
-    {
+    } catch {
       this.notificationService.showSnackBar("Issue Retrieving API Key");
       return "";
     }
-
-
   }
 }

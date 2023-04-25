@@ -14,6 +14,7 @@ import { IMovieReviewMode } from '../interfaces/IMovieReviewMode';
   templateUrl: './movie-search.component.html',
   styleUrls: ['./movie-search.component.css']
 })
+
 export class MovieSearchComponent implements OnInit {
 
   viewMode: IMovieReviewMode = {
@@ -57,7 +58,7 @@ export class MovieSearchComponent implements OnInit {
       }
     });
     DialogRef.afterClosed().subscribe(result => {
-      if(result){
+      if (result) {
         this.getCurrentReviews(this.currentMovieInfo.Title);
       }
     });
@@ -83,7 +84,7 @@ export class MovieSearchComponent implements OnInit {
     }
   }
 
-  public getCurrentReviews(movieName: string){
+  public getCurrentReviews(movieName: string) {
     this.currentReviews = this.movieReviewService.getReviewsForMovie(movieName);
   }
 }

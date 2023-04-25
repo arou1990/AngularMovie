@@ -8,8 +8,7 @@ import { ISearchedMovie } from '../interfaces/ISearchedMovie';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-  bestMovies: IBestMovies[] = [
-    {
+  bestMovies: IBestMovies[] = [{
       movieTitle: "The Dark Knight ",
       imdbScore: "10/10 ",
       ourScore: "10/10 ",
@@ -46,20 +45,20 @@ export class MainPageComponent {
       imageSrc: "assets/images/monstersInc.jpg"
     }
   ]
-    searchedMovie: ISearchedMovie[] = [
-    {    
+  searchedMovie: ISearchedMovie[] = [{
       poster: "https://picsum.photos/200/300",
       movieInfo: "Movie Info",
-      userReview: "User Review",
+      userReview: "User Review"
     },
-    {    
+    {
       poster: "https://picsum.photos/200/300",
       movieInfo: "Movie Info",
-      userReview: "User Review",
-    },    {    
+      userReview: "User Review"
+    },
+    {
       poster: "https://picsum.photos/200/300",
       movieInfo: "Movie Info",
-      userReview: "User Review",
+      userReview: "User Review"
     }
   ]
 }

@@ -1,5 +1,5 @@
-export interface ISearchedMovie{
-    poster: string,
-    movieInfo: string,
-    userReview: string,
+export interface ISearchedMovie {
+  poster: string;
+  movieInfo: string;
+  userReview: string;
 }

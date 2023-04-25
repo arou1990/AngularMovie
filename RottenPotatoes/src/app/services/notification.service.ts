@@ -6,7 +6,7 @@ import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition
 })
 export class NotificationService {
 
-  constructor(private loginSnack: MatSnackBar) { }
+  constructor(private loginSnack: MatSnackBar) {}
 
   public showSnackBar(message: string) {
     let horizontalPosition: MatSnackBarHorizontalPosition = 'center';
@@ -15,7 +15,7 @@ export class NotificationService {
     this.loginSnack.open(message, '', {
       horizontalPosition: horizontalPosition,
       verticalPosition: verticalPosition,
-      duration: 3000,
+      duration: 3000
     });
   }
 }

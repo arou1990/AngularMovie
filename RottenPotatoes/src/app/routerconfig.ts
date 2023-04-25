@@ -4,23 +4,24 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { AuthGuard } from './guards/auth.guard';
 
-const appRoutes: Routes = [
-  {
-    path: '', redirectTo: '/login', pathMatch: 'full'
+const appRoutes: Routes = [{
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
-  { 
-    path: 'login', 
+  {
+    path: 'login',
     component: LoginPageComponent
   },
-  { 
-    path: 'main', 
+  {
+    path: 'main',
     component: MainPageComponent,
     canActivate: [AuthGuard]
   },
-  { 
-    path: 'profile', 
+  {
+    path: 'profile',
     component: ProfilePageComponent,
     canActivate: [AuthGuard]
   }
 ];
-export default appRoutes; 
+export default appRoutes;

@@ -17,8 +17,8 @@ export class SearchService {
     this.apiKey = this.configService.getApiKey();
   }
 
-  public GetMovieInfo(movieName: string): Observable<IMovieInfo> {
+  public GetMovieInfo(movieName: string): Observable < IMovieInfo > {
     let url = this.baseURL + movieName + this.apiKeyPrefix + this.apiKey;
-    return this.httpClient.get <IMovieInfo> (url);
+    return this.httpClient.get < IMovieInfo > (url);
   }
 }

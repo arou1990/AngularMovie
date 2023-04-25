@@ -1,22 +1,21 @@
-.mainContainer{
-    background-color: black;
-
+.mainContainer {
+  background-color: black;
 }
 
-.movieContainer{
-    margin: 18px;
-    height: 750px;
-    outline: 2px solid black;
-    padding-bottom: 10px;
-    margin-top: 20px;
+.movieContainer {
+  margin: 18px;
+  height: 750px;
+  outline: 2px solid black;
+  padding-bottom: 10px;
+  margin-top: 20px;
 }
 
-.movieGrid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
-    padding: 20px;
-    font-weight: bolder;
-    justify-items: center;
+.movieGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px;
+  font-weight: bolder;
+  justify-items: center;
 }

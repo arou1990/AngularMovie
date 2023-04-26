@@ -2,6 +2,10 @@
 
 This was a learning project in order to get familiar with building single page applications in Angular.  This helped me to learn HTML, TypeScript, and CSS.  It also helped me to get familiar with Node, Angular CLI, and using a 3rd party UI component library.  I learned basic workflow with Github by creating new branches, staging changes, pushing, pulling, and merging branches.
 
+## Project Mockup
+
+- Done in Balsamiq.  Link to photos of mock up: https://imgur.com/a/ijti3me
+
 ## Project Dependencies
 - Please get an API key from [API](https://www.omdbapi.com/)
 - Angular libraries (seen in package.json)
@@ -124,3 +128,10 @@ All routes are configured in the routerconfig.ts. [canActivate](https://angular.
 ### Auth Guard
 
 - Use of Observable to check if user has successfully login and if not return them back to the login page
+
+## Future Aspirations
+
+- Properly storing encrypted login data in a SQL database
+- Accessing SQL database for movie into
+- Error valdiation messages in forms
+- Implementing subject behavior and observables to better update UI elements with dynamic data

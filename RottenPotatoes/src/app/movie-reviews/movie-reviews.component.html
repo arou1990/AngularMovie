@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <span class="reviewText">
       <h3><span
-          *ngIf="viewMode.showMovieName">{{movieReview.movieName}}</span>{{movieReview.score}}{{movieReview.review}}<span
+          *ngIf="viewMode.showMovieName">Title: {{movieReview.movieName}} </span>User Score: {{movieReview.score}}/10 Review: {{movieReview.review}}<span
           *ngIf="viewMode.showUserName">{{movieReview.userName}}</span></h3>
     </span>
     <span class="example-spacer"></span>
